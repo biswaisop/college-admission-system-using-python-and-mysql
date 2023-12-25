@@ -19,12 +19,21 @@ while i=="Y" or i=='y':
             print("Textile: txt")
             print()
             f=input("Enter your first name: ")
+            f=f.capitalize()
             l=input("Enter your last name: ")
+            l=l.capitalize()
             r=int(input("Enter your jee rank: "))
             p=int(input("Enter your board percentage: "))
             s=input("Enter your stream: ")
+            s=s.upper()
             re=input("Enter your reservation: ")
+            re=re.upper()
             cn=int(input("Enter your contact number: "))
+            bm=str(cn)
+            if len(bm)>10 or len(bm)>10:
+                cn = int(input("Enter your valid contact number: "))
+            else:
+                pass
             ei=input("Enter your Email ID: ")
             c=ch.execute("INSERT INTO `admission`(`First Name`, `Last Name`, `JEE Rank`, `Board Percentage`, `Stream`, `Reservation`,`Phone No.`,`Email ID`) VALUES ('{}','{}',{},{},'{}','{}',{},'{}')".format(f,l,r,p,s,re,cn,ei))
             db.commit()
@@ -70,4 +79,3 @@ if i=='n' or i=='N':
     print('Thank You')
     exit()
 #completed
-
